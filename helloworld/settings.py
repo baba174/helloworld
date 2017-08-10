@@ -69,7 +69,17 @@ STATIC_URL = '/static/'
 #ADMIN_MEDIA_PREFIX = '/static/admin/'
 
 # A list of strings representing the host/domain names that this Django site can serve.
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost','0.0.0.0']
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost','0.0.0.0','clikslab.tld','compute.amazonaws.com']
+
+import requests
+EC2_PRIVATE_IP  =   None
+try:
+    EC2_PRIVATE_IP  =   requests.get('http://169.254.169.254/latest/meta-data/local-ipv4', timeout = 0.01).text
+except requests.exceptions.RequestException:
+    pass
+
+if EC2_PRIVATE_IP:
+    ALLOWED_HOSTS.append(EC2_PRIVATE_IP)
 
 # Additional locations of static files
 STATICFILES_DIRS = (
