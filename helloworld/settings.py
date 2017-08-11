@@ -69,7 +69,7 @@ STATIC_URL = '/static/'
 #ADMIN_MEDIA_PREFIX = '/static/admin/'
 
 # A list of strings representing the host/domain names that this Django site can serve.
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost','0.0.0.0','clikslab.tld','compute.amazonaws.com']
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost','0.0.0.0','clikslab.tld','compute.amazonaws.com','ec2-13-126-30-6.ap-south-1.compute.amazonaws.com']
 
 
 # Additional locations of static files
